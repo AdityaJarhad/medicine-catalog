@@ -1,10 +1,34 @@
-import { supabase } from '@/lib/supabase'
+import { getSupabase } from '@/lib/supabase'
 import Link from 'next/link'
 
+export const dynamic = 'force-dynamic'
+
 export default async function CategoriesPage() {
-  const { data: categories } = await supabase
+  const supabase = getSupabase()
+
+  if (!supabase) {
+    return (
+      <div className="max-w-7xl mx-auto px-8 py-12">
+        <h1 className="text-2xl font-bold text-slate-800">Medicine Categories</h1>
+        <p className="text-slate-500 mt-2">
+          Configuration missing: set env variables in Vercel.
+        </p>
+      </div>
+    )
+  }
+
+  const { data: categories, error } = await supabase
     .from('categories')
     .select('*, medicines(count)')
+
+  if (error) {
+    return (
+      <div className="max-w-7xl mx-auto px-8 py-12">
+        <h1 className="text-2xl font-bold text-slate-800">Medicine Categories</h1>
+        <p className="text-slate-500 mt-2">Failed to load categories.</p>
+      </div>
+    )
+  }
 
   const icons = ['💊', '🩺', '🧬', '❤️', '🩹']
   const colors = [

@@ -1,7 +1,14 @@
-import { supabase } from '@/lib/supabase'
+import { getSupabase } from '@/lib/supabase'
 import MedicineCard from '@/components/MedicineCard'
 
+export const dynamic = 'force-dynamic'
+
 export default async function MedicinesPage({ searchParams }) {
+  const supabase = getSupabase()
+
+  if (!supabase) {
+    return <p>Supabase not configured</p>
+  }
   const params = await searchParams
   const categoryId = params?.category
 
@@ -13,7 +20,15 @@ export default async function MedicinesPage({ searchParams }) {
     query = query.eq('categories.slug', categoryId)
   }
 
-  const { data: medicines } = await query
+  const { data: medicines, error } = await query
+
+  if (error) {
+    return <p>Failed to load medicines</p>
+  }
+  
+  if (!medicines || medicines.length === 0) {
+    return <p>No medicines found</p>
+  }
 
   return (
     <div>
