@@ -1,14 +1,31 @@
-import { supabase } from '@/lib/supabase'
+import { getSupabase } from '@/lib/supabase'
 import { Badge } from '@/components/ui/badge'
 
+export const dynamic = 'force-dynamic'
+
 export default async function MedicineDetailPage({ params }) {
-  const { data: medicine } = await supabase
+  
+  const { id } = await params
+  const supabase = getSupabase()
+
+  if (!supabase) {
+    return <p>Supabase not configured</p>
+  }
+
+  const { data: medicine, error } = await supabase
     .from('medicines')
     .select('*, categories(name)')
-    .eq('id', params.id)
-    .single()
+    .eq('id', id)
+    .maybeSingle()
 
-  if (!medicine) return <p>Medicine not found.</p>
+  if (error) {
+    console.log(error)
+    return <p>Failed to load medicine.</p>
+  }
+
+  if (!medicine) {
+    return <p>Medicine not found.</p>
+  }
 
   return (
     <div className="max-w-2xl mx-auto">

@@ -1,7 +1,20 @@
-import { supabase } from '@/lib/supabase'
+import { getSupabase } from '@/lib/supabase'
 import Link from 'next/link'
 
+export const dynamic = 'force-dynamic'
+
 export default async function Home() {
+  const supabase = getSupabase()
+
+  if (!supabase) {
+    return (
+      <div className="p-10">
+        <h1>Configuration missing</h1>
+        <p>Set Supabase env variables in Vercel.</p>
+      </div>
+    )
+  }
+
   const { data: categories } = await supabase
     .from('categories')
     .select('*')
