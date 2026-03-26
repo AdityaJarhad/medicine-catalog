@@ -5,8 +5,8 @@ import Navbar from '@/components/Navbar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'MediCatalog',
-  description: 'Medicine Catalog',
+  title: 'Laurynix Therapeutics - Pharmaceutical Supplier',
+  description: 'Leading pharmaceutical supplier in India. Quality medicines for pharmacies and distributors.',
 }
 
 export default function RootLayout({ children }) {
@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <main className="max-w-7xl mx-auto px-6 py-8">
+        <main className="min-h-screen">
           {children}
         </main>
       </body>
