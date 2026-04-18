@@ -2,6 +2,8 @@
 
 @layer base {
   :root {
+    --color-teal: #2aab8e;
+    --color-orange: #f97316;
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --primary: 166 61% 41%;

@@ -30,14 +30,14 @@ export default async function Home() {
     <div className="flex flex-col">
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#eafaf6] to-[#f0fdf9] py-20 px-8">
+      <section className="relative z-0 bg-gradient-to-br from-[#eafaf6] to-[#f0fdf9] py-20 px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 space-y-6">
             <span className="text-sm font-semibold text-[#2aab8e] uppercase tracking-widest">
               Trusted Pharmaceutical Solutions
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-slate-800 leading-tight">
-              Quality Medicines <br />
+              Quality Products <br />
               <span className="text-[#2aab8e]">You Can Trust</span>
             </h1>
             <p className="text-slate-500 text-lg max-w-md">
@@ -48,7 +48,7 @@ export default async function Home() {
                 href="/medicines"
                 className="bg-[#2aab8e] text-white px-6 py-3 rounded-md text-sm font-semibold hover:bg-[#238f76] transition-colors"
               >
-                Browse Medicines
+                Browse Products
               </Link>
               <Link
                 href="/categories"
@@ -124,11 +124,11 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Featured Medicines */}
+      {/* Featured Products */}
       <section className="py-16 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-10">
-            <h2 className="text-2xl font-bold text-slate-800">Featured Medicines</h2>
+            <h2 className="text-2xl font-bold text-slate-800">Featured Products</h2>
             <Link href="/medicines" className="text-sm text-[#2aab8e] font-medium hover:underline">
               View All →
             </Link>
