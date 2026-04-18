@@ -8,7 +8,7 @@ export default async function CategoriesPage() {
 
   if (!supabase) {
     return (
-      <div className="max-w-7xl mx-auto px-8 py-12">
+      <div className="mx-auto w-full max-w-screen-2xl px-4 py-12 sm:px-6 lg:px-8">
         <h1 className="text-2xl font-bold text-slate-800">Medicine Categories</h1>
         <p className="text-slate-500 mt-2">
           Configuration missing: set env variables in Vercel.
@@ -23,7 +23,7 @@ export default async function CategoriesPage() {
 
   if (error) {
     return (
-      <div className="max-w-7xl mx-auto px-8 py-12">
+      <div className="mx-auto w-full max-w-screen-2xl px-4 py-12 sm:px-6 lg:px-8">
         <h1 className="text-2xl font-bold text-slate-800">Medicine Categories</h1>
         <p className="text-slate-500 mt-2">Failed to load categories.</p>
       </div>
@@ -47,7 +47,7 @@ export default async function CategoriesPage() {
   ]
 
   return (
-    <div className="max-w-7xl mx-auto px-8 py-12">
+    <div className="mx-auto w-full max-w-screen-2xl px-4 py-12 sm:px-6 lg:px-8">
 
       {/* Header */}
       <div className="mb-10">

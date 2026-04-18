@@ -30,8 +30,8 @@ export default async function Home() {
     <div className="flex flex-col">
 
       {/* Hero */}
-      <section className="relative z-0 bg-gradient-to-br from-[#eafaf6] to-[#f0fdf9] py-20 px-8">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+      <section className="relative z-0 bg-gradient-to-br from-[#eafaf6] to-[#f0fdf9] px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-screen-2xl flex-col items-center gap-12 md:flex-row">
           <div className="flex-1 space-y-6">
             <span className="text-sm font-semibold text-[#2aab8e] uppercase tracking-widest">
               Trusted Pharmaceutical Solutions
@@ -77,8 +77,8 @@ export default async function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-screen-2xl">
           <h2 className="text-2xl font-bold text-slate-800 text-center mb-10">
             Why Choose Laurynix?
           </h2>
@@ -99,8 +99,8 @@ export default async function Home() {
       </section>
 
       {/* Categories Section */}
-      <section className="py-16 px-8 bg-[#f8fffe]">
-        <div className="max-w-7xl mx-auto">
+      <section className="bg-[#f8fffe] px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-screen-2xl">
           <div className="flex items-center justify-between mb-10">
             <h2 className="text-2xl font-bold text-slate-800">Browse by Category</h2>
             <Link href="/categories" className="text-sm text-[#2aab8e] font-medium hover:underline">
@@ -125,8 +125,8 @@ export default async function Home() {
       </section>
 
       {/* Featured Products */}
-      <section className="py-16 px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-screen-2xl">
           <div className="flex items-center justify-between mb-10">
             <h2 className="text-2xl font-bold text-slate-800">Featured Products</h2>
             <Link href="/medicines" className="text-sm text-[#2aab8e] font-medium hover:underline">
@@ -163,8 +163,8 @@ export default async function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 px-8 bg-[#2aab8e]">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <section className="bg-[#2aab8e] px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-between gap-8 md:flex-row">
           <div className="text-white space-y-3">
             <h2 className="text-3xl font-bold">About Laurynix Therapeutics</h2>
             <p className="text-white/80 max-w-lg">
@@ -182,7 +182,7 @@ export default async function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-800 text-slate-300 py-8 px-8 text-center text-sm">
+      <footer className="bg-slate-800 px-4 py-8 text-center text-sm text-slate-300 sm:px-6 lg:px-8">
         <p>© 2024 Laurynix Therapeutics. All rights reserved.</p>
         <p className="mt-1 text-slate-400">laurynixtherapeutics.com</p>
       </footer>

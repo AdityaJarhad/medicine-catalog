@@ -9,7 +9,11 @@ export default async function MedicineDetailPage({ params }) {
   const supabase = getSupabase()
 
   if (!supabase) {
-    return <p>Supabase not configured</p>
+    return (
+      <div className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+        <p>Supabase not configured</p>
+      </div>
+    )
   }
 
   const { data: medicine, error } = await supabase
@@ -20,15 +24,23 @@ export default async function MedicineDetailPage({ params }) {
 
   if (error) {
     console.log(error)
-    return <p>Failed to load medicine.</p>
+    return (
+      <div className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+        <p>Failed to load medicine.</p>
+      </div>
+    )
   }
 
   if (!medicine) {
-    return <p>Medicine not found.</p>
+    return (
+      <div className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+        <p>Medicine not found.</p>
+      </div>
+    )
   }
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold text-slate-800">{medicine.name}</h1>
       <p className="text-slate-500 mt-1">{medicine.generic_name}</p>
 
